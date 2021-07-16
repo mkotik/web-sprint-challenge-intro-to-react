@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Characters from "./components/Characters.js";
 import data from "./data.js";
+import Footer from "./components/Footer.js";
 
 const App = () => {
   const [characters, setCharacters] = useState(null);
@@ -23,8 +24,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <h1 className="Header">Star Wars Characters</h1>
       <Characters characters={characters} />
+      <Footer />
     </div>
   );
 };

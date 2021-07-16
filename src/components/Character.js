@@ -4,6 +4,7 @@ import styled from "styled-components";
 import FilmsSection from "./FilmsSection.js";
 import Attributes from "./Attributes.js";
 import Homeworld from "./Homeworld.js";
+import { getAllByDisplayValue } from "@testing-library/react";
 
 const BoxWrap = styled.div`
   margin: auto;
@@ -13,6 +14,7 @@ const BoxWrap = styled.div`
   border-radius: 5px;
   font-family: "Tourney", cursive;
   margin-bottom: 2vh;
+  box-shadow: 0 2px 5px 0 black;
   &:hover {
     background-color: lightblue;
     cursor: pointer;
@@ -30,6 +32,8 @@ const TopSection = styled.div`
 const BottomSection = styled.div`
   width: 100%;
   margin: 0px;
+  transition: max-height 2s ease-out;
+  max-height: auto;
   display: flex;
   align-items: baseline;
   justify-content: space-around;
