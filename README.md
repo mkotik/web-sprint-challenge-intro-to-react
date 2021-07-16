@@ -81,6 +81,17 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+
+ReactJS is a user interface component library for javascript. It was build by Facebook to solve problems with complex state.
+
 1. Describe component state.
+
+Component state is a dynamic variable associated with a component. Every time this variable changes, the component will automatically be re-rendered.
+
 1. Describe props.
+
+Props is information that can be passed around between components.
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+A side effect is a react hook that takes a callback function, and an array of states. The callback function will be called every time a state within the array of states is changed.
