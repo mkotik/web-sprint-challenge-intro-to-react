@@ -7,7 +7,7 @@ const Films = styled.div`
 
 const FilmsHeader = styled.div`
   font-family: "Abril Fatface", cursive;
-  border-bottom: solid 3px black;
+  border-bottom: solid 3px #484848;
   /* width: 190px; */
   /* margin: auto; */
   /* margin-left: 20px; */

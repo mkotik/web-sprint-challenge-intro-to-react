@@ -1,7 +1,5 @@
-import { directive } from "@babel/types";
 import React from "react";
 import styled from "styled-components";
-import Character from "./Character";
 
 const AttributesWrap = styled.div`
   display: flex;
@@ -11,7 +9,7 @@ const AttributesWrap = styled.div`
 
 const AttributeHeader = styled.p`
   font-family: "Abril Fatface", cursive;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid #484848;
 `;
 
 const Attribute = styled.p`

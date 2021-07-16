@@ -7,13 +7,9 @@ import data from "./data.js";
 const App = () => {
   const [characters, setCharacters] = useState(null);
   useEffect(() => {
-    console.log(data.results);
-    // setCharacters(data.results);
-
     axios
       .get("https://swapi.dev/api/people/?format=json")
       .then((res) => {
-        console.log(res.data);
         setCharacters(res.data);
       })
       .catch((err) => console.log(err));

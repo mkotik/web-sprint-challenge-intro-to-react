@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import FilmsSection from "./FilmsSection.js";
 import Attributes from "./Attributes.js";
+import Homeworld from "./Homeworld.js";
 
 const BoxWrap = styled.div`
   margin: auto;
@@ -32,14 +34,16 @@ const BottomSection = styled.div`
   align-items: baseline;
   justify-content: space-around;
   padding-bottom: 20px;
+  color: #484848;
 `;
 
 function Bottom(props) {
-  const { character } = props;
+  const { character, homeWorld } = props;
   return (
     <BottomSection>
       <FilmsSection character={character} />
       <Attributes character={character} />
+      <Homeworld homeWorld={homeWorld} />
     </BottomSection>
   );
 }
@@ -47,6 +51,16 @@ function Bottom(props) {
 function Character(props) {
   const { character } = props;
   const [isOpen, setIsOpen] = useState(false);
+  const [homeWorld, setHomeWorld] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(character.homeworld)
+      .then((res) => {
+        setHomeWorld(res.data.name);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div>
       <BoxWrap onClick={() => setIsOpen(!isOpen)}>
@@ -54,7 +68,7 @@ function Character(props) {
           <h2>{character.name}</h2>
           <h3>{character.birth_year}</h3>
         </TopSection>
-        {isOpen && <Bottom character={character} />}
+        {isOpen && <Bottom character={character} homeWorld={homeWorld} />}
       </BoxWrap>
     </div>
   );
