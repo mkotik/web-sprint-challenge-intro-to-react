@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import FilmsSection from "./FilmsSection.js";
+import Attributes from "./Attributes.js";
 
 const BoxWrap = styled.div`
   margin: auto;
@@ -27,40 +29,17 @@ const BottomSection = styled.div`
   width: 100%;
   margin: 0px;
   display: flex;
-  /* align-items: center; */
-  padding-top: 20px;
-`;
-
-const Films = styled.div`
-  width: 40%;
-`;
-
-const FilmsHeader = styled.div`
-  font-family: "Abril Fatface", cursive;
-  border-bottom: solid 3px black;
-  width: 80%;
-  margin: auto;
-`;
-
-const FilmsList = styled.ul``;
-
-const FilmsListItem = styled.li`
-  font-family: "Abril Fatface", cursive;
-  width: 20%;
+  align-items: baseline;
+  justify-content: space-around;
+  padding-bottom: 20px;
 `;
 
 function Bottom(props) {
   const { character } = props;
   return (
     <BottomSection>
-      <Films>
-        <FilmsHeader>Films:</FilmsHeader>
-        <FilmsList>
-          {character.films.map((cur) => (
-            <FilmsListItem>Test</FilmsListItem>
-          ))}
-        </FilmsList>
-      </Films>
+      <FilmsSection character={character} />
+      <Attributes character={character} />
     </BottomSection>
   );
 }
